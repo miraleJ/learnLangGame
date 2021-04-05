@@ -1,10 +1,11 @@
-import Try from './components/Try'
+// import Try from './components/Try'
 import './App.css';
+import GamePage from './components/GamePage';
 
 function App() {
   return (
     <div className="App">
-      <Try />
+      <GamePage />
     </div>
   );
 }
