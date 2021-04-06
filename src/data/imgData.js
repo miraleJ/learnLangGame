@@ -8,13 +8,13 @@ const imgData = [
         tagsAndPlace: [
             {
                 tagName: 'head',
-                startC: [863,134],
-                endC: [1007,367]
+                startC: [200,32],
+                endC: [234,83]
             }
         ],
-        id: 1,
+        id: 1, //??
     },
     
 ];
-
+console.log(imgData[0].picWidth);
 export default imgData;
