@@ -1,4 +1,3 @@
-// import Try from './components/Try'
 import './App.css';
 import GamePage from './components/GamePage';
 

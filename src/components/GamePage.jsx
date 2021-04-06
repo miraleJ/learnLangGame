@@ -1,15 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import imgData from '../data/imgData'
 import hidingData from '../data/hidingItems'
+import Picture from './Picture';
+import Sentence from './Sentence';
+import '../style/gamePage.css'
 
 export default function GamePage() {
-    const [gameState, setGameState] = useState(false);
+    const [nowPic, setNowPic] = useState(null);
+    const [nowTag, setNowTag] = useState({});
+    const [nowSentence, setNowSentence] = useState([]);
+
+    const randomIntUnder = (max) => {
+        return Math.floor(Math.random() * max);
+    }
+
+    const newGameState = () => {
+        const picNum = randomIntUnder(imgData.length);
+        setNowPic(imgData[picNum].pic);
+        setNowTag(imgData[picNum].tagsAndPlace[randomIntUnder(imgData[picNum].tagsAndPlace.length)]);
+        setNowSentence(['There is a robot behind the', `${nowTag.tagName}`]);
+    }
+
+    useEffect (() => {
+        newGameState()
+    }, [])
 
     return (
         <div>
-            {/* random picture */}
-
-            {/* sentence */}
+            <div className='gameSide'>
+                {/* random picture */}
+                <Picture pic={nowPic} />
+                {/* sentence */}
+                <Sentence s={nowSentence} />
+            </div>
             {/* points */}
         </div>
     )

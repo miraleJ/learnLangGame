@@ -1,4 +1,4 @@
-import head from '../images/head'
+import head from '../images/head.png'
 
 const hidingItems = [
     {
