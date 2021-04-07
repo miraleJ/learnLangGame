@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Rancho", cursive;
+  font-weight: 200;
+}
+
+body {
+  background-color: #2a282b;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 .gamePage {
@@ -12,7 +22,6 @@
 }
 
 .img-container {
-  background-color: blue;
   height: fit-content;
   width: fit-content;
   position: relative;
@@ -20,12 +29,48 @@
 }
 
 .mainPic {
+  margin: 10px;
   max-height: 90vh;
-  max-width: 80%;
-
+  max-width: 85vw;
   z-index: 2;
+  border-radius: 10px;
 }
 
 .hiding-item {
   position: absolute;
+  display: none;
+}
+
+.showing-item {
+  position: absolute;
+  display: block;
+  transition: all 1.5s ease-in-out;
+  animation-name: animatepop;
+  animation-duration: 0.6s;
+}
+
+@keyframes animatepop {
+  0% {
+    transform: translateZ(160px) translateY(-100px) translateX(-100px);
+  }
+  100% {
+    transform: translateZ(0) translateY(0) translateX(0);
+  }
+}
+
+.sentence {
+  color: #ebce7d;
+}
+
+.dashboard {
+  margin: 10px;
+  width: 14vw;
+  border: #ff4c2d outset 3px;
+  border-radius: 10px;
+}
+
+.points {
+  margin: auto;
+  margin-top: 10vh;
+  font-size: 10vh;
 }

@@ -8,15 +8,16 @@ export default function Picture(props) {
         height: '50px',
         zIndex: '10'
     });
+    const [nowClassName, setNowClassName] = useState('hiding-item');
     const containerRef = useRef(null);
     const hidingRef = useRef(null);
 
     const calculateHidingLeft = (event) => {
-        return ((containerRef.current.clientWidth - event.target.width) / 2 + (event.target.height / 300) * props.tag.startC[0] - hidingRef.current.clientWidth / 1.7);
+        return ((containerRef.current.clientWidth - event.target.clientWidth) / 2 + (event.target.clientHeight / 300) * props.tag.startC[0] - hidingRef.current.clientWidth / 1.7);
     }
 
     const calculateHidingTop = (event) => {
-        return ((containerRef.current.clientHeight - event.target.height) / 2 + (event.target.height / 300) * props.tag.startC[1] - hidingRef.current.clientHeight / 1.7);
+        return ((containerRef.current.clientHeight - event.target.clientHeight) / 2 + (event.target.clientHeight / 300) * props.tag.startC[1] - hidingRef.current.clientHeight / 1.7);
     }
 
     const clickInItem = (x, y) => {
@@ -35,20 +36,18 @@ export default function Picture(props) {
         const clickCoordinateY = event.nativeEvent.offsetY;
         // TODO - need to be in the sentence place (in/on/under...)
         if (clickInItem(
-            (300 / event.target.height) * clickCoordinateX,
-            (300 / event.target.height) * clickCoordinateY)) {
+            (300 / event.target.clientHeight) * clickCoordinateX,
+            (300 / event.target.clientHeight) * clickCoordinateY)) {
             console.log('click in item');
-            props.handleClick(5)
+            props.handleClick(5);
+            setNowClassName('showing-item');
             // make the hiding item in the right size and in the right place
-            console.log(calculateHidingTop(event))
             setNowStyle({
                 top: `${calculateHidingTop(event)}px`,
                 left: `${calculateHidingLeft(event)}px`,
-                height: `${(props.tag.endC[1] - props.tag.startC[1])*(125/100)}px`,
-                zIndex: '10'
+                height: `${(props.tag.endC[1] - props.tag.startC[1]) * (125 / 100)}px`,
             })
-
-            console.log('oooooo')
+            
         } else {
             console.log('click out of item');
         }
@@ -57,7 +56,7 @@ export default function Picture(props) {
     return (
         <div ref={containerRef} className='img-container'>
             <img className='mainPic' src={`${props.pic}`} alt="" onClick={handleClick} />
-            <img className='hiding-item' ref={hidingRef} src={hidedItem} alt="" style={nowStyle}/>
+            <img className={nowClassName} ref={hidingRef} src={hidedItem} alt="" style={nowStyle}/>
         </div>
     )
 }
