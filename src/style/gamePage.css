@@ -71,6 +71,14 @@ h2 {
 
 .points {
   margin: auto;
+  text-align: center;
   margin-top: 10vh;
   font-size: 10vh;
+  color: #70ced3;
+  border: #70ced3 4px dotted;
+  border-radius: 50%;
+  display: inline-block;
+  height: 16vh;
+  width: 16vh;
+  padding-top: 1vh;
 }
