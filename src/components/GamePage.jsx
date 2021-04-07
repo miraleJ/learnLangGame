@@ -32,8 +32,8 @@ export default function GamePage() {
         newGameState()
     }, [])
 
-    const handleClick = (newPoints) => {
-        setNowPoints(newPoints);
+    const handleClick = (addNewPoints) => {
+        setNowPoints(nowPoints + addNewPoints);
     }
 
     return (
