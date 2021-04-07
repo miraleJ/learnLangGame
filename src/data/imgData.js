@@ -17,5 +17,5 @@ const imgData = [
     },
     // more pictures
 ];
-console.log(imgData[0].picWidth);
+
 export default imgData;

@@ -1,4 +1,14 @@
 .mainPic {
   max-height: 90vh;
   max-width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hiding-item {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  height: 80px;
 }
