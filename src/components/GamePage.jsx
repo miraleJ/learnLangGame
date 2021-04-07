@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import imgData from '../data/imgData'
-import hidingData from '../data/hidingItems'
+// import hidingData from '../data/hidingItems'
 import Picture from './Picture';
 import Sentence from './Sentence';
 import '../style/gamePage.css';
@@ -36,17 +36,28 @@ export default function GamePage() {
         setNowPoints(nowPoints + addNewPoints);
     }
 
+    const nextStage = () => {
+        newGameState();
+    }
+
     return (
         <div className='gamePage'>
             <div className='gameSide'>
                 {/* random picture */}
-                <Picture pic={nowPic} tag={nowTag} handleClick={handleClick}/>
+                <Picture 
+                    pic={nowPic} 
+                    tag={nowTag} 
+                    handleClick={handleClick}
+                    nextStage={nextStage}
+                />
                 {/* sentence */}
                 <Sentence s={nowSentence} />
             </div>
             <div className='dashboard'>
                 {/* points */}
                 <Points nowPoints={nowPoints} />
+                <br/>
+                Points
             </div>
         </div>
     )

@@ -29,6 +29,11 @@ export default function Picture(props) {
         true : false);
     }
 
+    const nextStage = () => {
+        setNowClassName('hiding-item');
+        props.nextStage();
+    }
+
     const handleClick = (event) => {
         console.log('in picture handle click')
         
@@ -47,6 +52,8 @@ export default function Picture(props) {
                 left: `${calculateHidingLeft(event)}px`,
                 height: `${(props.tag.endC[1] - props.tag.startC[1]) * (125 / 100)}px`,
             })
+            // start new stage
+            setTimeout(nextStage, 2000);
             
         } else {
             console.log('click out of item');
