@@ -1,14 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gamePage {
+  display: flex;
+}
+
+.gameSide {
+}
+
+.img-container {
+  background-color: blue;
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+  display: inline-block;
+}
+
 .mainPic {
   max-height: 90vh;
-  max-width: 100%;
-  position: relative;
+  max-width: 80%;
+
   z-index: 2;
 }
 
 .hiding-item {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-  height: 80px;
 }
