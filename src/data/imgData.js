@@ -1,5 +1,6 @@
 import boyOnTractor from '../images/boyOnTractor.jpg'
 import playRoom from '../images/playRoom.jpg'
+import saloon from '../images/saloon.jpg'
 
 const imgData = [
     {
@@ -40,6 +41,30 @@ const imgData = [
                 tagName: 'chair',
                 startC: [254,110],
                 endC: [304,185]
+            }
+            // more tags info
+        ],
+        id: 1, //??
+    },
+    {
+        title: 'saloon',
+        imageUrl: "",
+        pic: saloon,
+        tagsAndPlace: [
+            {
+                tagName: 'tree',
+                startC: [61,119],
+                endC: [148,281]
+            },
+            {
+                tagName: 'pillow',
+                startC: [203,206],
+                endC: [246,245]
+            },
+            {
+                tagName: 'lamp',
+                startC: [354,107],
+                endC: [426,286]
             }
             // more tags info
         ],
