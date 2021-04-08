@@ -5,6 +5,7 @@ import Picture from './Picture';
 import Sentence from './Sentence';
 import '../style/gamePage.css';
 import Points from './Points';
+import Dictionary from './Dictionary';
 
 export default function GamePage() {
     const [nowPic, setNowPic] = useState(null);
@@ -58,6 +59,8 @@ export default function GamePage() {
                 <Points nowPoints={nowPoints} />
                 <br/>
                 Points
+                <br/>
+                <Dictionary handleClick={handleClick} />
             </div>
         </div>
     )
