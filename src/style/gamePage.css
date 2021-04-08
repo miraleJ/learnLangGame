@@ -11,7 +11,7 @@ body {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 45px;
 }
 
 .gamePage {
@@ -82,4 +82,9 @@ h2 {
   height: 16vh;
   width: 16vh;
   padding-top: 1vh;
+}
+
+span {
+  font-size: 50px;
+  color: #eeb076;
 }

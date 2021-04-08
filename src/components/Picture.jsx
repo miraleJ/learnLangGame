@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
-import hidedItem from '../images/head.png'
+import React, { useState, useRef, useEffect } from 'react'
+import hidenItem from '../data/hidingItems'
 
 export default function Picture(props) {
     const [nowStyle, setNowStyle] = useState({
@@ -11,6 +11,27 @@ export default function Picture(props) {
     const [nowClassName, setNowClassName] = useState('hiding-item');
     const containerRef = useRef(null);
     const hidingRef = useRef(null);
+    const [nowHiddenItem, setNowHiddenItem] = useState(null);
+
+    const randHidenItem = (max) => {
+        return Math.floor(Math.random() * max);
+    }
+
+    const newHidden = () => {
+        let item = 0;
+        const randI = randHidenItem(hidenItem.length);
+        if (hidenItem[randI].title === 'robot') {
+            item = `${(hidenItem[randI].image)}${props.tag.tagName}`;
+        } else {
+            item = `${(hidenItem[randI].image)}`;
+        }
+        setNowHiddenItem(item)
+        // console.log(tag.tagName);;
+    }
+
+    useEffect(() => {
+        newHidden();
+    }, [])
 
     const calculateHidingLeft = (event) => {
         return ((containerRef.current.clientWidth - event.target.clientWidth) / 2 + (event.target.clientHeight / 300) * props.tag.startC[0] - hidingRef.current.clientWidth / 1.7);
@@ -32,6 +53,7 @@ export default function Picture(props) {
     const nextStage = () => {
         setNowClassName('hiding-item');
         props.nextStage();
+        newHidden();
     }
 
     const handleClick = (event) => {
@@ -63,7 +85,7 @@ export default function Picture(props) {
     return (
         <div ref={containerRef} className='img-container'>
             <img className='mainPic' src={`${props.pic}`} alt="" onClick={handleClick} />
-            <img className={nowClassName} ref={hidingRef} src={hidedItem} alt="" style={nowStyle}/>
+            <img className={nowClassName} ref={hidingRef} src={nowHiddenItem} alt="" style={nowStyle}/>
         </div>
     )
 }
