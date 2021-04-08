@@ -123,7 +123,7 @@ const imgData = [
         pic: kidWithBaloon,
         tagsAndPlace: [
             {
-                tagName: 'yello baloon',
+                tagName: 'yellow baloon',
                 startC: [274,89],
                 endC: [310,138]
             },
