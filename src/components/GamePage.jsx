@@ -31,6 +31,7 @@ export default function GamePage() {
 
     useEffect (() => {
         newGameState()
+        // eslint-disable-next-line
     }, [])
 
     const handleClick = (addNewPoints) => {

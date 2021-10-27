@@ -31,6 +31,7 @@ export default function Picture(props) {
 
     useEffect(() => {
         newHidden();
+        // eslint-disable-next-line
     }, [])
 
     const calculateHidingLeft = (event) => {

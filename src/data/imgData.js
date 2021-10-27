@@ -108,7 +108,7 @@ const imgData = [
                 endC: [253,186]
             },
             {
-                tagName: 'green ball',
+                tagName: 'green balloon',
                 startC: [334,126],
                 endC: [450,267]
             },
@@ -123,7 +123,7 @@ const imgData = [
         pic: kidWithBaloon,
         tagsAndPlace: [
             {
-                tagName: 'yellow baloon',
+                tagName: 'yellow balloon',
                 startC: [274,89],
                 endC: [310,138]
             },
